@@ -111,12 +111,11 @@ def place_stone(Player, Dictionary, Tiles, Blocked_Tiles):
 
     return Dictionary, Blocked_Tiles
 
-def menu(P_1, P_2, First):
-    if First == True:
-        Forbidden = ['O']
-        P_1 = player_names(1,Forbidden)
-        Forbidden.append(P_1)
-        P_2 = player_names(2,Forbidden)
+def menu():
+    Forbidden = ['O']
+    P_1 = player_names(1,Forbidden)
+    Forbidden.append(P_1)
+    P_2 = player_names(2,Forbidden)
 
     print('MENU \n1) 3x3 \n2) 5x5 \n3) 7x7')
     Game_Mode_Tuple = ('1','2','3')
@@ -128,10 +127,9 @@ def menu(P_1, P_2, First):
 def main():
     columns_dict = {1:'A', 2:'B', 3:'C', 4:'D', 5:'E', 6:'F', 7:'G'}
     Play = True
-    First = True
 
     while Play == True:
-        P_1, P_2, Game_Mode = menu(P_1, P_2, First)
+        P_1, P_2, Game_Mode = menu()
         Game_Mode_Dict = {'1':3, '2':5, '3':7}
         Game_Mode = Game_Mode_Dict[Game_Mode]
         Mid_Colmn = columns_dict[(Game_Mode+1)/2]
